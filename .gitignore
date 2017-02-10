@@ -1,6 +1,18 @@
 # Webstorm config
 .idea/
 
+# Bower components
+bower_components/
+
+# Node Packages
+node_modules/
+
+# Temporal Altair's modules
+app/
+assets/
+data/
+file_manager/
+
 # OS Globals
 thumbs.db
 .DS_Store
