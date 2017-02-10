@@ -1,4 +1,4 @@
-altairApp
+agooDash
     .factory('windowDimensions', [
         '$window',
         function($window) {

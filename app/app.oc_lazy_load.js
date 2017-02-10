@@ -1,6 +1,6 @@
 /* ocLazyLoad config */
 
-altairApp
+agooDash
     .config([
         '$ocLazyLoadProvider',
         function($ocLazyLoadProvider) {

@@ -4,7 +4,7 @@
  */
 
 angular
-    .module('altairApp')
+    .module('agooDash')
     .controller('mainCtrl', [
         function () {}
     ])

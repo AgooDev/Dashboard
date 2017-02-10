@@ -1,4 +1,4 @@
-altairApp
+agooDash
     .config([
         '$stateProvider',
         '$urlRouterProvider',

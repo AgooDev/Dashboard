@@ -3,7 +3,7 @@
 */
 ;"use strict";
 
-var altairApp = angular.module('altairApp', [
+var agooDash = angular.module('agooDash', [
     'ui.router',
     'oc.lazyLoad',
     'ngSanitize',
@@ -12,13 +12,13 @@ var altairApp = angular.module('altairApp', [
     'ConsoleLogger'
 ]);
 
-altairApp.constant('variables', {
+agooDash.constant('variables', {
     header_main_height: 48,
     easing_swiftOut: [ 0.4,0,0.2,1 ],
     bez_easing_swiftOut: $.bez([ 0.4,0,0.2,1 ])
 });
 
-altairApp.config(function($sceDelegateProvider) {
+agooDash.config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         'self',
         'https://www.youtube.com/**',
@@ -27,7 +27,7 @@ altairApp.config(function($sceDelegateProvider) {
 });
 
 // breadcrumbs
-altairApp.config(function($breadcrumbProvider) {
+agooDash.config(function($breadcrumbProvider) {
     $breadcrumbProvider.setOptions({
         prefixStateName: 'restricted.dashboard',
         templateUrl: 'app/templates/breadcrumbs.tpl.html'
@@ -38,7 +38,7 @@ altairApp.config(function($breadcrumbProvider) {
 function detectIE(){var a=window.navigator.userAgent,b=a.indexOf("MSIE ");if(0<b)return parseInt(a.substring(b+5,a.indexOf(".",b)),10);if(0<a.indexOf("Trident/"))return b=a.indexOf("rv:"),parseInt(a.substring(b+3,a.indexOf(".",b)),10);b=a.indexOf("Edge/");return 0<b?parseInt(a.substring(b+5,a.indexOf(".",b)),10):!1};
 
 /* Run Block */
-altairApp
+agooDash
     .run([
         '$rootScope',
         '$state',

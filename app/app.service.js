@@ -1,4 +1,4 @@
-altairApp
+agooDash
     .service('detectBrowser', [
         '$window',
         function($window) {

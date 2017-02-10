@@ -39,7 +39,7 @@ require('require-dir')('./gulp-tasks');
     BUILD (t_build.js)
         gulp build - build _dist folder (minified js/css/json)
 
-
+ */
 
 // -------------------- PROCESS ALL JS --------------------
 gulp.task('js_all', ['js_angular_common','js_app','js_app_minify','js_common','js_minify']);
@@ -55,4 +55,3 @@ gulp.task('default', function(callback) {
     );
 });
 
-*/

@@ -4,7 +4,7 @@
 */
 ;'use strict';
 
-altairApp
+agooDash
     // page title
     .directive('pageTitle', [
         '$rootScope',
@@ -14,10 +14,10 @@ altairApp
                 restrict: 'A',
                 link: function() {
                     var listener = function(event, toState) {
-                        var default_title = 'Altair Admin';
+                        var default_title = 'Agoo Admin';
                         $timeout(function() {
                             $rootScope.page_title = (toState.data && toState.data.pageTitle)
-                                ? default_title + ' - ' + toState.data.pageTitle : default_title;
+                                ? toState.data.pageTitle + ' | ' + default_title : default_title;
                         });
                     };
                     $rootScope.$on('$stateChangeSuccess', listener);
