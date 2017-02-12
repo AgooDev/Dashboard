@@ -1,10 +1,14 @@
 {
-  "name": "altair_admin_angularJS",
-  "version": "2.10.0",
-  "description": "Altair Admin Material Design UIkit Template",
+  "name": "AgooDashboard",
+  "version": "0.1.0",
+  "description": "Administration dashboard and tools",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://AlejoJamC@github.com/AgooDev/Dashboard.git"
   },
   "keywords": [
     "admin",
@@ -13,9 +17,9 @@
     "dashboard",
     "angular js"
   ],
-  "author": "tzd",
-  "license": "http://themeforest.net/licenses",
-  "homepage": "http://altair.tzdthemes.com",
+  "author": "AgooDev",
+  "license": "https://raw.githubusercontent.com/AgooDev/Dashboard/master/LICENSE",
+  "homepage": "http://admin.agoo.com.co",
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.17.0",
@@ -38,5 +42,8 @@
     "os-utils": "0.0.14",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2"
+  },
+  "bugs": {
+    "url": "https://github.com/AgooDev/Dashboard/issues"
   }
 }

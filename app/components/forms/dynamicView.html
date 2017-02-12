@@ -1,0 +1,75 @@
+<div id="page_content">
+    <div id="page_content_inner">
+
+        <div class="uk-grid" data-uk-grid-margin>
+            <div class="uk-width-large-3-5">
+                <div class="md-card">
+                    <div class="md-card-content">
+                        <form class="uk-form" >
+                            <div class="uk-grid uk-grid-medium form_hr" data-uk-grid-match ng-repeat="(topParent,section) in form_dynamic track by $index">
+                                <div class="uk-width-8-10 uk-width-medium-9-10">
+                                    <div class="uk-grid" ng-repeat="fields in section" on-last-repeat>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 0" ng-repeat="input in fields">
+                                            <div class="parsley-row">
+                                                <label>{{ input.label }}</label>
+                                                <input type="{{ input.type }}" ng-model="form_dynamic_model[topParent][input.name]" class="md-input" required md-input>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-1" ng-if="$parent.$index == 1" ng-repeat="input in fields" >
+                                            <div class="parsley-row">
+                                                <label>{{ input.label }}</label>
+                                                <input type="{{ input.type }}" ng-model="form_dynamic_model[topParent][input.name]" class="md-input" required md-input>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 2" ng-repeat="field in fields">
+                                            <div class="parsley-row" ng-if="field.type == 'radio'">
+                                                <label>{{field.label}}:</label>
+                                                <div class="dynamic_radio uk-margin-small-top">
+                                                    <span class="icheck-inline" ng-repeat="input in field.inputs">
+                                                        <input type="radio" id="{{field.name}}_{{ topParent }}_{{$index}}" ng-model="form_dynamic_model[topParent][field.name]" value="{{input.value}}" icheck required/>
+                                                        <label for="{{field.name}}_{{ topParent }}_{{$index}}" class="inline-label">{{ input.label }}</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div ng-if="field.type == 'switch'">
+                                                <label>{{field.label}}:</label>
+                                                <div class="uk-margin-small-top">
+                                                    <div class="parsley-row" ng-repeat="input in field.inputs">
+                                                        <input type="checkbox" id="{{input.name}}_{{ topParent }}_{{$index}}" name="{{input.name}}_{{ topParent }}_{{$index}}" ng-model="form_dynamic_model[topParent][input.name]" ui-switch/>
+                                                        <label for="{{input.name}}_{{ topParent }}_{{$index}}" class="inline-label">{{input.label}}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-medium-1-2" ng-if="$parent.$index == 3" ng-repeat="input in fields" >
+                                            <div class="parsley-row" ng-class="{ 'uk-margin-small-top' : input.position }">
+                                                <input type="text" config="input.config" options="input.data" ng-model="form_dynamic_model[topParent][input.name]" position="bottom" selectize ng-if="input.position">
+                                                <input type="text" config="input.config" options="input.data" ng-model="form_dynamic_model[topParent][input.name]" selectize ng-if="!input.position">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-width-2-10 uk-width-medium-1-10 uk-text-center">
+                                    <div class="uk-vertical-align uk-height-1-1">
+                                        <div class="uk-vertical-align-middle">
+                                            <a href="javascript:void(0)" ng-click="cloneSection($event,$index)" ng-if="$last"><i class="material-icons md-36">&#xE146;</i></a>
+                                            <a href="javascript:void(0)" ng-click="deleteSection($event,$index)" ng-if="!$last"><i class="material-icons md-36">&#xE872;</i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-large-2-5">
+                <div class="md-card">
+                    <div class="md-card-content">
+<pre><code>{{ form_dynamic_model | json}}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
