@@ -10,10 +10,7 @@ node_modules/
 # Temporal Altair's modules
 *.min.js
 *.min.css
-app/components/
 app/modules/
-app/shared/
-app/templates/
 app/views/
 assets/
 data/

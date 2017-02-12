@@ -48,7 +48,7 @@ agooDash
         '$timeout',
         'preloaders',
         'variables',
-        function ($rootScope, $state, $stateParams,$http,$window, $timeout,variables) {
+        function ($rootScope, $state, $stateParams, $http, $window, $timeout, variables) {
 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
