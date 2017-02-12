@@ -109,12 +109,10 @@ gulp.task('js_app', function () {
             "app/app.controller.js",
             "app/app.oc_lazy_load.js"
         ])
-        .pipe(plugins.concat('altair_app.js'))
         .pipe(gulp.dest('assets/js/'))
         .pipe(plugins.uglify({
             mangle: false
         }))
-        .pipe(plugins.rename('altair_app.min.js'))
         .pipe(plugins.size({
             showFiles: true
         }))

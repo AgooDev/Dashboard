@@ -23,9 +23,6 @@ gulp.task('serve', (process.argv[3] === '--compile') ? ['default'] : null, funct
     });
 
     gulp.watch('app/*.js', ['js_app']);
-    gulp
-        .watch('assets/js/altair_app.min.js')
-        .on('change', bs_angular.reload);
 
     gulp.watch('assets/less/**/*.less', ['less_main']);
     gulp

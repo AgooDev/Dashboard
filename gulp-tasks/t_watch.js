@@ -26,18 +26,6 @@ gulp.task('watch', (process.argv[3] === '--compile') ? ['default'] : null, funct
         }
     });
 
-    gulp.watch('app/*.js', ['js_app']);
-    gulp
-        .watch('assets/js/altair_app.min.js')
-        .on('change', bs_angular.reload);
-
-    gulp.watch('assets/less/**/*.less', ['less_main']);
-    gulp
-        .watch('assets/css/main.min.css')
-        .on('change', function() {
-            bs_angular.reload("assets/css/main.min.css")
-        });
-
     gulp
         .watch([
             'gulp-tasks/*',
