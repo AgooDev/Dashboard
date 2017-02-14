@@ -6,10 +6,19 @@ agooDash
 
             // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
             $urlRouterProvider
-                .when('/dashboard', '/')
+                .when('', '/')
                 .otherwise('/');
 
             $stateProvider
+            // -- AGOO ADMIN PAGES --
+                /*.state('', {
+                    url : '',
+                    templateURL: '',
+                    controller: 'regularCtrl',
+                    data: {
+                        pageTitle: 'Top Menu'
+                    }
+                }) */
             // -- ERROR PAGES --
                 .state("error", {
                     url: "/error",
@@ -32,7 +41,7 @@ agooDash
                 })
             // -- LOGIN PAGE --
                 .state("login", {
-                    url: "/login",
+                    url: "/",
                     templateUrl: 'app/components/pages/loginView.html',
                     controller: 'loginCtrl',
                     resolve: {
@@ -66,7 +75,7 @@ agooDash
                 })
             // -- DASHBOARD --
                 .state("restricted.dashboard", {
-                    url: "/",
+                    url: "/dashboard",
                     templateUrl: 'app/components/dashboard/dashboardView.html',
                     controller: 'dashboardCtrl',
                     resolve: {
