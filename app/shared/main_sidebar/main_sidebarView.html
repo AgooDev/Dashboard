@@ -1,20 +1,5 @@
     <!-- main sidebar -->
     <aside id="sidebar_main" sidebar-primary custom-scrollbar ng-class="{ 'accordion_mode': menuAccordionMode }">
-        <!--<div class="sidebar_main_header" ng-if="!fullHeaderActive">
-            <div class="sidebar_logo">
-                <a ui-sref="restricted.dashboard" class="sSidebar_hide sidebar_logo_large">
-                    <img class="logo_regular" ng-src="assets/img/logo_main.png" alt="" add-image-prop />
-                    <img class="logo_light" ng-src="assets/img/logo_main_white.png" alt="" add-image-prop />
-                </a>
-                <a ui-sref="restricted.dashboard" class="sSidebar_show sidebar_logo_small">
-                    <img class="logo_regular" src="assets/img/logo_main_small.png" alt="" add-image-prop/>
-                    <img class="logo_light" src="assets/img/logo_main_small_light.png" alt="" add-image-prop/>
-                </a>
-            </div>
-            <div class="sidebar_actions">
-                <selectize id="lang_switcher" name="lang_switcher" config='langSwitcherConfig' options='langSwitcherOptions' ng-model="langSwitcherModel"></selectize>
-            </div>
-        </div>-->
         <div class="menu_section">
             <ul>
                 <li ui-sref-active="current_section" ng-repeat="section in sections" ng-switch="section.link.length > 0" ng-class="{'submenu_trigger': (section.submenu.length > 0) && !miniSidebarActive, 'sidebar_submenu': (section.submenu.length > 0) && miniSidebarActive}" on-last-repeat>
