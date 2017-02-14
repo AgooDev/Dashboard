@@ -53,7 +53,13 @@ agooDash
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
 
+            // Enable 'fullheader' for all app
+            $rootScope.fullHeaderActive = true;
+
             $rootScope.$on('$stateChangeSuccess', function () {
+
+                // Enable 'fullheader' for all app
+                $rootScope.fullHeaderActive = true;
 
                 // scroll view to top
                 $("html, body").animate({
