@@ -196,7 +196,7 @@ angular
                 if(localStorage.getItem("altair_theme") !== null) {
                     $rootScope.main_theme = localStorage.getItem("altair_theme");
                 } else {
-                    $rootScope.main_theme = "default_theme"
+                    $rootScope.main_theme = "app_theme_f"
                 }
 
             }
