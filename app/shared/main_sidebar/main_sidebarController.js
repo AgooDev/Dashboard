@@ -64,6 +64,29 @@ angular
             $scope.sections = [
                 {
                     id: 0,
+                    title: 'Contenido',
+                    icon: '&#xE80C;',
+                    submenu: [
+                        {
+                            title: 'Programas',
+                            link: 'restricted.content.programs'
+                        },
+                        {
+                            title: 'Niveles',
+                            link: 'restricted.content.levels'
+                        },
+                        {
+                            title: 'Cursos',
+                            link: 'restricted.content.courses'
+                        },
+                        {
+                            title: 'Detalle de contenido',
+                            link: 'restricted.content.details'
+                        }
+                    ]
+                },
+                {
+                    id: 0,
                     title: 'Dashboard',
                     icon: '&#xE871;',
                     link: 'restricted.dashboard'
