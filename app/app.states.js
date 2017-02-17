@@ -113,7 +113,110 @@ agooDash
                         label: 'Home'
                     }
                 })
-                // -- FORMS --
+            // -- PARAMS --
+                .state("restricted.params", {
+                    url: "/params",
+                    template: '<div ui-view autoscroll="false"/>',
+                    abstract: true
+                })
+                .state("restricted.params.countries", {
+                    url: "/countries",
+                    templateUrl: "app/components/params/countryView.html",
+                    controller: "countryCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/params/countryController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Paises"
+                    }
+                })
+                .state("restricted.params.states", {
+                    url: "/states",
+                    templateUrl: "app/components/params/stateView.html",
+                    controller: "stateCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/params/stateController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Estados / Departamentos"
+                    }
+                })
+                .state("restricted.params.cities", {
+                    url: "/cities",
+                    templateUrl: "app/components/params/cityView.html",
+                    controller: "cityCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/params/cityController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Ciudades"
+                    }
+                })
+            // -- CONTENT --
+                .state("restricted.content", {
+                    url: "/content",
+                    template: '<div ui-view autoscroll="false"/>',
+                    abstract: true
+                })
+                .state("restricted.content.programs", {
+                    url: "/programs",
+                    templateUrl: "app/components/content/programView.html",
+                    controller: "programCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/content/programController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Programas"
+                    }
+                })
+                .state("restricted.content.levels", {
+                    url: "/levels",
+                    templateUrl: "app/components/content/levelView.html",
+                    controller: "levelCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/content/levelController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Niveles"
+                    }
+                })
+                .state("restricted.content.courses", {
+                    url: "/courses",
+                    templateUrl: "app/components/content/courseView.html",
+                    controller: "programCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/content/courseController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Cursos"
+                    }
+                })
+                .state("restricted.content.details", {
+                    url: "/details",
+                    templateUrl: "app/components/content/contentView.html",
+                    controller: "programCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/content/contentontroller.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Contenidos"
+                    }
+                })
+            // -- FORMS --
                 .state("restricted.forms", {
                     url: "/forms",
                     template: '<div ui-view autoscroll="false"/>',
