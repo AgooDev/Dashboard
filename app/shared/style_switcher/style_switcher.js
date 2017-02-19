@@ -194,9 +194,11 @@ angular
 
                 // check which theme is active
                 if(localStorage.getItem("altair_theme") !== null) {
-                    $rootScope.main_theme = localStorage.getItem("altair_theme");
+                    $rootScope.main_theme = "app_theme_f";
+                    // TODO: temporal avoid switch at theme colors
+                    //$rootScope.main_theme = localStorage.getItem("altair_theme");
                 } else {
-                    $rootScope.main_theme = "app_theme_f"
+                    $rootScope.main_theme = "app_theme_f";
                 }
 
             }
