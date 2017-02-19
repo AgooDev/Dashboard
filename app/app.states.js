@@ -177,17 +177,17 @@ agooDash
                         pageTitle: "Programas"
                     }
                 })
-                .state("restricted.content.levels", {
-                    url: "/levels",
-                    templateUrl: "app/components/content/levelView.html",
-                    controller: "levelCtrl",
+                .state("restricted.content.lessons", {
+                    url: "/lessons",
+                    templateUrl: "app/components/content/lessonView.html",
+                    controller: "lessonCtrl",
                     resolve: {
                         deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/content/levelController.js");
+                            return $ocLazyLoad.load("app/components/content/lessonController.js");
                         }]
                     },
                     data: {
-                        pageTitle: "Niveles"
+                        pageTitle: "Lecciones"
                     }
                 })
                 .state("restricted.content.courses", {
