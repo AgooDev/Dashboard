@@ -54,6 +54,7 @@ agooDash
                         }]
                     }
                 })
+
             // -- RESTRICTED --
                 .state("restricted", {
                     abstract: true,
@@ -73,6 +74,7 @@ agooDash
                         }]
                     }
                 })
+
             // -- DASHBOARD --
                 .state("restricted.dashboard", {
                     url: "/dashboard",
@@ -113,51 +115,159 @@ agooDash
                         label: 'Home'
                     }
                 })
-            // -- PARAMS --
-                .state("restricted.params", {
-                    url: "/params",
-                    template: '<div ui-view autoscroll="false"/>',
-                    abstract: true
-                })
-                .state("restricted.params.countries", {
-                    url: "/countries",
-                    templateUrl: "app/components/params/countryView.html",
-                    controller: "countryCtrl",
+
+            // -- USERS / CLIENTS --
+                .state("restricted.users", {
+                    url: "/users",
+                    templateUrl: 'app/components/platform/user_listView.html',
+                    controller: 'user_listCtrl',
                     resolve: {
-                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/params/countryController.js");
-                        }]
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_uikit',
+                                'app/components/platform/user_listController.js'
+                            ],{serie: true});
+                        }],
+                        contact_list: function($http){
+                            return $http({ method: 'GET', url: 'data/contact_list.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
                     },
                     data: {
-                        pageTitle: "Paises"
+                        pageTitle: 'Lista de usuarios'
                     }
                 })
-                .state("restricted.params.states", {
-                    url: "/states",
-                    templateUrl: "app/components/params/stateView.html",
-                    controller: "stateCtrl",
+                .state("restricted.users.user_detail", {
+                    url: "/detail",
+                    templateUrl: 'app/components/platform/user_detailView.html',
+                    controller: 'user_detailCtrl',
                     resolve: {
-                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/params/stateController.js");
-                        }]
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'app/components/platform/user_detailController.js'
+                            ]);
+                        }],
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
                     },
                     data: {
-                        pageTitle: "Estados / Departamentos"
+                        pageTitle: 'Perfil del usuario'
                     }
                 })
-                .state("restricted.params.cities", {
-                    url: "/cities",
-                    templateUrl: "app/components/params/cityView.html",
-                    controller: "cityCtrl",
+                .state("restricted.users.user_add", {
+                    url: "/add",
+                    templateUrl: 'app/components/platform/user_addView.html',
+                    controller: 'user_addCtrl',
                     resolve: {
-                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/params/cityController.js");
-                        }]
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/platform/user_addController.js'
+                            ],{serie: true});
+                        }],
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
+                        groups_data: function($http){
+                            return $http({ method: 'GET', url: 'data/groups_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
                     },
                     data: {
-                        pageTitle: "Ciudades"
+                        pageTitle: 'Agregar usuario'
                     }
                 })
+                .state("restricted.users.user_edit", {
+                    url: "/edit",
+                    templateUrl: 'app/components/platform/user_editView.html',
+                    controller: 'user_editCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/platform/user_editController.js'
+                            ],{serie: true});
+                        }],
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
+                        groups_data: function($http){
+                            return $http({ method: 'GET', url: 'data/groups_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Editar usuario'
+                    }
+                })
+
+            // -- INVOICES --
+                .state("restricted.invoices", {
+                    url: "/invoices",
+                    abstract: true,
+                    templateUrl: 'app/components/platform/invoices_listView.html',
+                    controller: 'invoicesCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load('app/components/platform/invoicesController.js');
+                        }],
+                        invoices_data: function($http){
+                            return $http({ method: 'GET', url: 'data/invoices_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    }
+                })
+                .state("restricted.invoices.list", {
+                    url: "/list",
+                    views: {
+                        'ivoice_content': {
+                            templateUrl: 'app/components/platform/invoices_blankView.html',
+                            controller: 'invoicesCtrl'
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Invoices'
+                    }
+                })
+                .state("restricted.invoices.details", {
+                    url: "/details/{invoiceId:[0-9]{1,4}}",
+                    views: {
+                        'ivoice_content': {
+                            templateUrl: 'app/components/platform/invoices_detailView.html',
+                            controller: 'invoicesCtrl'
+                        }
+                    },
+                    params: { hidePreloader: true }
+                })
+                .state("restricted.invoices.add", {
+                    url: "/add",
+                    views: {
+                        'ivoice_content': {
+                            templateUrl: 'app/components/platform/invoices_addView.html',
+                            controller: 'invoicesCtrl'
+                        }
+                    },
+                    params: { hidePreloader: true }
+                })
+
             // -- CONTENT --
                 .state("restricted.content", {
                     url: "/content",
@@ -206,16 +316,162 @@ agooDash
                 .state("restricted.content.details", {
                     url: "/details",
                     templateUrl: "app/components/content/contentView.html",
-                    controller: "programCtrl",
+                    controller: "contentCtrl",
                     resolve: {
                         deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/content/contentontroller.js");
+                            return $ocLazyLoad.load("app/components/content/contentController.js");
                         }]
                     },
                     data: {
                         pageTitle: "Contenidos"
                     }
                 })
+
+            // -- PARAMS --
+                .state("restricted.params", {
+                    url: "/params",
+                    template: '<div ui-view autoscroll="false"/>',
+                    abstract: true
+                })
+                .state("restricted.params.admin", {
+                    url: "/users",
+                    templateUrl: 'app/components/platform/admin_listView.html',
+                    controller: 'admin_listCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_uikit',
+                                'app/components/platform/admin_listController.js'
+                            ],{serie: true});
+                        }],
+                        contact_list: function($http){
+                            return $http({ method: 'GET', url: 'data/contact_list.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Lista de administradores'
+                    }
+                })
+                .state("restricted.params.admin.admin_detail", {
+                    url: "/detail",
+                    templateUrl: 'app/components/platform/admin_detailView.html',
+                    controller: 'admin_detailCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'app/components/platform/admin_detailController.js'
+                            ]);
+                        }],
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Perfil del administrador'
+                    }
+                })
+                .state("restricted.params.admin.admin_add", {
+                    url: "/add",
+                    templateUrl: 'app/components/platform/admin_addView.html',
+                    controller: 'admin_addCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/platform/admin_addController.js'
+                            ],{serie: true});
+                        }],
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
+                        groups_data: function($http){
+                            return $http({ method: 'GET', url: 'data/groups_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Agregar administrador'
+                    }
+                })
+                .state("restricted.params.admin.admin_edit", {
+                    url: "/edit",
+                    templateUrl: 'app/components/platform/admin_editView.html',
+                    controller: 'admin_editCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'assets/js/custom/uikit_fileinput.min.js',
+                                'app/components/platform/admin_editController.js'
+                            ],{serie: true});
+                        }],
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
+                        groups_data: function($http){
+                            return $http({ method: 'GET', url: 'data/groups_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: 'Editar administrador'
+                    }
+                })
+                .state("restricted.params.countries", {
+                    url: "/countries",
+                    templateUrl: "app/components/params/countryView.html",
+                    controller: "countryCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/params/countryController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Paises"
+                    }
+                })
+                .state("restricted.params.states", {
+                    url: "/states",
+                    templateUrl: "app/components/params/stateView.html",
+                    controller: "stateCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/params/stateController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Estados / Departamentos"
+                    }
+                })
+                .state("restricted.params.cities", {
+                    url: "/cities",
+                    templateUrl: "app/components/params/cityView.html",
+                    controller: "cityCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load("app/components/params/cityController.js");
+                        }]
+                    },
+                    data: {
+                        pageTitle: "Ciudades"
+                    }
+                })
+
             // -- FORMS --
                 .state("restricted.forms", {
                     url: "/forms",
