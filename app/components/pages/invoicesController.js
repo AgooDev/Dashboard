@@ -1,6 +1,6 @@
 angular
     .module('agooDash')
-    .controller('invoicesCtrl', [
+    .controller('invoiceCtrl', [
         '$scope',
         '$rootScope',
         'utils',
