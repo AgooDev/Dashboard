@@ -1,6 +1,6 @@
 angular
     .module('agooDash')
-    .controller('levelCtrl', [
+    .controller('lessonCtrl', [
         '$scope',
         '$rootScope',
         '$timeout',
