@@ -64,6 +64,12 @@ angular
             $scope.sections = [
                 {
                     id: 0,
+                    title: 'Dashboard',
+                    icon: '&#xE871;',
+                    link: 'restricted.dashboard'
+                },
+                {
+                    id: 1,
                     title: 'Contenido',
                     icon: '&#xE80C;',
                     submenu: [
@@ -72,12 +78,12 @@ angular
                             link: 'restricted.content.programs'
                         },
                         {
-                            title: 'Niveles',
-                            link: 'restricted.content.levels'
-                        },
-                        {
                             title: 'Cursos',
                             link: 'restricted.content.courses'
+                        },
+                        {
+                            title: 'Leccion',
+                            link: 'restricted.content.lessons'
                         },
                         {
                             title: 'Detalle de contenido',
@@ -86,25 +92,55 @@ angular
                     ]
                 },
                 {
-                    id: 0,
-                    title: 'Dashboard',
-                    icon: '&#xE871;',
-                    link: 'restricted.dashboard'
+                    id: 2,
+                    title: 'Usuarios',
+                    icon: '&#xE0BA;',
+                    link: 'restricted.users'
                 },
                 {
-                    id: 1,
+                    id: 3,
+                    title: 'Invoices',
+                    icon: '&#xE53E;',
+                    link: 'restricted.invoices.list'
+                },
+                {
+                    id: 4,
+                    title: 'Parametros',
+                    icon: '&#xE8B8;',
+                    submenu: [
+                        {
+                            title: 'Administradores',
+                            link: 'restricted.params.admin'
+                        },
+                        {
+                            title: 'Paises',
+                            link: 'restricted.params.countries'
+                        },
+                        {
+                            title: 'Departamentos / Estados',
+                            link: 'restricted.params.states'
+                        },
+                        {
+                            title: 'Ciudades',
+                            link: 'restricted.params.cities'
+                        }
+                    ]
+                }
+                /*
+                {
+                    id: 3,
                     title: 'Mailbox',
                     icon: '&#xE158;',
                     link: 'restricted.pages.mailbox'
                 },
                 {
-                    id: 2,
+                    id: 4,
                     title: 'Invoices',
                     icon: '&#xE53E;',
                     link: 'restricted.pages.invoices.list'
                 },
                 {
-                    id: 3,
+                    id: 5,
                     title: 'Chats',
                     icon: '&#xE0B9;',
                     submenu: [
@@ -617,7 +653,7 @@ angular
                             ]
                         }
                     ]
-                }
+                }*/
             ]
     
         }
