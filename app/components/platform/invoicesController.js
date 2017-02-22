@@ -28,7 +28,7 @@ angular
                 }
             };
 
-        // invoice details
+            // invoice details
             $scope.invoice = utils.findByItemId($scope.invoices_data, $stateParams.invoiceId);
 
             if($scope.invoice) {
@@ -67,7 +67,7 @@ angular
 
             }
 
-        // new invoice
+            // new invoice
             $scope.invoiceData = {
                 services: [
                     {

@@ -434,15 +434,47 @@ agooDash
                 })
                 .state("restricted.params.countries", {
                     url: "/countries",
+                    templateUrl: "app/components/params/country_listView.html",
+                    controller: "country_listCtrl",
+                    resolve: {
+                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                "app/components/params/country_listController.js"
+                            ], {serie: true});
+                        }],
+                        countries_data: function ($http) {
+                            return $http(
+                                {
+                                    method: 'GET',
+                                    url: '',
+                                    headers: {
+                                        'Content-Type' : '',
+                                        'Authorization' : ''
+                                    }
+                                }
+                            )
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    },
+                    data: {
+                        pageTitle: "Lista de paises"
+                    }
+                })
+                .state("restricted.params.countries.country_detail", {
+                    url: "/detail",
                     templateUrl: "app/components/params/countryView.html",
                     controller: "countryCtrl",
                     resolve: {
                         deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/params/countryController.js");
+                            return $ocLazyLoad.load([
+                                "app/components/params/countryController.js"
+                            ], {serie: true});
                         }]
                     },
                     data: {
-                        pageTitle: "Paises"
+                        pageTitle: "Detalle del pais"
                     }
                 })
                 .state("restricted.params.states", {
