@@ -95,7 +95,7 @@ angular
                     id: 2,
                     title: 'Usuarios',
                     icon: '&#xE0BA;',
-                    link: 'restricted.users'
+                    link: 'restricted.users.list'
                 },
                 {
                     id: 3,

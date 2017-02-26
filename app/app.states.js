@@ -119,97 +119,75 @@ agooDash
             // -- USERS / CLIENTS --
                 .state("restricted.users", {
                     url: "/users",
-                    templateUrl: 'app/components/platform/user_listView.html',
-                    controller: 'user_listCtrl',
+                    abstract: true,
+                    templateUrl: 'app/components/platform/user_structView.html',
+                    controller: 'usersCtrl',
                     resolve: {
                         deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'lazy_uikit',
-                                'app/components/platform/user_listController.js'
-                            ],{serie: true});
+                            return $ocLazyLoad.load('app/components/platform/usersController.js');
                         }],
                         contact_list: function($http){
                             return $http({ method: 'GET', url: 'data/contact_list.json' })
                                 .then(function (data) {
                                     return data.data;
                                 });
+                        },
+                        user_data: function($http){
+                            return $http({ method: 'GET', url: 'data/user_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        },
+                        groups_data: function($http){
+                            return $http({ method: 'GET', url: 'data/groups_data.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    }
+                })
+                .state("restricted.users.list", {
+                    url: "/list",
+                    views: {
+                        'user_content': {
+                            templateUrl: 'app/components/platform/user_listView.html',
+                            controller: 'usersCtrl'
                         }
                     },
                     data: {
                         pageTitle: 'Lista de usuarios'
                     }
                 })
-                .state("restricted.users.user_detail", {
+                .state("restricted.users.detail", {
                     url: "/detail",
-                    templateUrl: 'app/components/platform/user_detailView.html',
-                    controller: 'user_detailCtrl',
-                    resolve: {
-                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'app/components/platform/user_detailController.js'
-                            ]);
-                        }],
-                        user_data: function($http){
-                            return $http({ method: 'GET', url: 'data/user_data.json' })
-                                .then(function (data) {
-                                    return data.data;
-                                });
+                    views: {
+                        'user_content': {
+                            templateUrl: 'app/components/platform/user_detailView.html',
+                            controller: 'usersCtrl'
                         }
                     },
                     data: {
                         pageTitle: 'Perfil del usuario'
                     }
                 })
-                .state("restricted.users.user_add", {
+                .state("restricted.users.add", {
                     url: "/add",
-                    templateUrl: 'app/components/platform/user_addView.html',
-                    controller: 'user_addCtrl',
-                    resolve: {
-                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'assets/js/custom/uikit_fileinput.min.js',
-                                'app/components/platform/user_addController.js'
-                            ],{serie: true});
-                        }],
-                        user_data: function($http){
-                            return $http({ method: 'GET', url: 'data/user_data.json' })
-                                .then(function (data) {
-                                    return data.data;
-                                });
-                        },
-                        groups_data: function($http){
-                            return $http({ method: 'GET', url: 'data/groups_data.json' })
-                                .then(function (data) {
-                                    return data.data;
-                                });
+                    views: {
+                        'user_content': {
+                            templateUrl: 'app/components/platform/user_addView.html',
+                            controller: 'usersCtrl'
                         }
                     },
                     data: {
                         pageTitle: 'Agregar usuario'
                     }
                 })
-                .state("restricted.users.user_edit", {
+                .state("restricted.users.edit", {
                     url: "/edit",
-                    templateUrl: 'app/components/platform/user_editView.html',
-                    controller: 'user_editCtrl',
-                    resolve: {
-                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'assets/js/custom/uikit_fileinput.min.js',
-                                'app/components/platform/user_editController.js'
-                            ],{serie: true});
-                        }],
-                        user_data: function($http){
-                            return $http({ method: 'GET', url: 'data/user_data.json' })
-                                .then(function (data) {
-                                    return data.data;
-                                });
-                        },
-                        groups_data: function($http){
-                            return $http({ method: 'GET', url: 'data/groups_data.json' })
-                                .then(function (data) {
-                                    return data.data;
-                                });
+                    views: {
+                        'user_content': {
+                            templateUrl: 'app/components/platform/user_editView.html',
+                            controller: 'usersCtrl'
                         }
                     },
                     data: {
