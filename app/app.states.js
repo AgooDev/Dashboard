@@ -254,15 +254,72 @@ agooDash
                 })
                 .state("restricted.content.programs", {
                     url: "/programs",
-                    templateUrl: "app/components/content/programView.html",
+                    abstract: true,
+                    templateUrl: "app/components/content/program_structView.html",
                     controller: "programCtrl",
                     resolve: {
-                        deps: ["$ocLazyLoad", function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("app/components/content/programController.js");
-                        }]
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'lazy_ionRangeSlider',
+                                'lazy_tablesorter',
+                                'app/components/content/programController.js'
+                            ],{serie:true});
+                        }],
+                        ts_data: function($http){
+                            return $http({ method: 'GET', url: 'data/tablesorter.json' })
+                                .then(function (data) {
+                                    return data.data;
+                                });
+                        }
+                    }
+                })
+                .state("restricted.content.programs.list", {
+                    url: "/list",
+                    views: {
+                        'program_content': {
+                            //templateUrl: 'app/components/content/program_listView.html',
+                            templateUrl: 'app/components/content/program_simplelistView.html',
+                            controller: 'programCtrl'
+                        }
                     },
                     data: {
-                        pageTitle: "Programas"
+                        pageTitle: "Lista de programas"
+                    }
+                })
+                .state("restricted.content.programs.add", {
+                    url: "/add",
+                    views: {
+                        'program_content': {
+                            templateUrl: 'app/components/content/program_addView.html',
+                            controller: 'programCtrl'
+                        }
+                    },
+                    data: {
+                        pageTitle: "Agregar programa"
+                    }
+                })
+                .state("restricted.content.programs.detail", {
+                    url: "/detail",
+                    views: {
+                        'program_content': {
+                            templateUrl: 'app/components/content/program_detailView.html',
+                            controller: 'programCtrl'
+                        }
+                    },
+                    data: {
+                        pageTitle: "Detalle del programa"
+                    }
+                })
+                .state("restricted.content.programs.edit", {
+                    url: "/edit",
+                    views: {
+                        'program_content': {
+                            templateUrl: 'app/components/content/program_editView.html',
+                            controller: 'programCtrl'
+                        }
+                    },
+                    data: {
+                        pageTitle: "Editar programa"
                     }
                 })
                 .state("restricted.content.lessons", {
