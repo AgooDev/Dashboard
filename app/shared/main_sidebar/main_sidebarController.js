@@ -75,7 +75,7 @@ angular
                     submenu: [
                         {
                             title: 'Programas',
-                            link: 'restricted.content.programs'
+                            link: 'restricted.content.programs.list'
                         },
                         {
                             title: 'Cursos',
