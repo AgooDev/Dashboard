@@ -117,6 +117,17 @@ angular
              $scope.checkbox_demo_4 = true;
              */
 
+            $scope.checked = true;
+
+            $scope.cambiarChecked = function () {
+                console.log($scope.checked);
+                if($scope.checked) {
+                    $scope.checked = false;
+                } else {
+                    $scope.checked = true;
+                }
+            };
+
             $scope.table_data = ts_data;
 
             $scope.alignChar_table_data = [
