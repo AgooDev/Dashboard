@@ -6,6 +6,7 @@ public/assets/
 uploads/*.jpg
 uploads/*.png
 *.jpeg
+*.png
 
 # dotEnv file
 *.env
