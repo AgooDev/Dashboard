@@ -1,203 +1,275 @@
-<div class="page-sidebar-wrapper">
-    <!-- END SIDEBAR -->
-    <div class="page-sidebar navbar-collapse collapse">
-        <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-            <li class="nav-item start active open ">
+<!-- main sidebar -->
+<aside id="sidebar_main">
 
-                <a href="/" class="nav-link nav-toggle">
-                    <i class="icon-magnifier"></i>
-                    <span class="title">Buscar</span>
-                    <span class="selected"></span>
-                    <span class="arrow open"></span>
+    <div class="menu_section">
+        <ul>
+            <li title="Dashboard">
+                <a href="index.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE871;</i></span>
+                    <span class="menu_title">Dashboard</span>
                 </a>
+
             </li>
-            <li class="nav-item">
-            <!--<li class="nav-item  Request::is('users') ? ' active open ' : ''  ">-->
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-user"></i>
-                    <span class="title">Afiliado</span>
-                    <!--<span  Request::is('users') ? ' class=selected ' : '' ></span>-->
-                    <span class="arrow"></span>
+            <li title="Mailbox">
+                <a href="page_mailbox.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE158;</i></span>
+                    <span class="menu_title">Mailbox</span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <!-- <a href="/affiliates/new" class="nav-link ">-->
-                        <a href="/addAffiliates" class="nav-link ">
-                             <i class="icon-user-follow"></i>
-                             <span class="title">Crear Afiliado</span>
-                         </a>
-                     </li>
-                     <li class="nav-item  ">
-                         <a href="/affiliates" class="nav-link ">
-                             <i class="icon-user-following"></i>
-                             <span class="title">Buscar Afiliado</span>
-                         </a>
-                     </li>
-                 </ul>
-             </li>
-             <li class="nav-item">
-             <!--<li class="nav-item  Request::is('general') ? ' active open ' : ''  ">-->
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-users"></i>
-                    <span class="title">Referido</span>
-                    <!--<span  Request::is('general') ? ' class=selected ' : '' ></span>-->
-                    <span class="arrow"></span>
+
+            </li>
+            <li title="Invoices">
+                <a href="page_invoices.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
+                    <span class="menu_title">Invoices</span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <!--<a href="/referred/new" class="nav-link ">-->
-                            <a href="/newreferred" class="nav-link ">
-                            <i class="icon-user-follow"></i>
-                            <span class="title">Crear Referido</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/referred" class="nav-link ">
-                            <i class="icon-user-following"></i>
-                            <span class="title">Buscar Referido</span>
-                        </a>
-                    </li>
+
+            </li>
+            <li title="Chats">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE0B9;</i></span>
+                    <span class="menu_title">Chats</span>
+                </a>
+                <ul>
+                    <li><a href="page_chat.html">Regular Chat</a></li>
+                    <li><a href="page_chat_small.html">Chatboxes</a></li>
                 </ul>
+
             </li>
-            <!--<li class="nav-item  Request::is('system') ? ' active open ' : '' ">-->
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-layers"></i>
-                    <span class="title">Reportes</span>
-                    <!--<span  Request::is('system') ? ' class=selected ' : '' ></span>-->
-                    <span class="arrow"></span>
+            <li title="Scrum Board">
+                <a href="page_scrum_board.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE85C;</i></span>
+                    <span class="menu_title">Scrum Board</span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="/" class="nav-link ">
-                            <span class="title">Reporte 1</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/" class="nav-link ">
-                            <span class="title">Reporte 2</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/" class="nav-link ">
-                            <span class="title">Reporte 3</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/" class="nav-link ">
-                            <span class="title">Reporte 4</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/" class="nav-link ">
-                            <span class="title">Reporte 5</span>
-                        </a>
-                    </li>
+
+            </li>
+            <li title="Snippets">
+                <a href="page_snippets.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE86F;</i></span>
+                    <span class="menu_title">Snippets</span>
+                </a>
+
+            </li>
+            <li title="User Profile">
+                <a href="page_user_profile.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE87C;</i></span>
+                    <span class="menu_title">User Profile</span>
+                </a>
+
+            </li>
+            <li title="Sticky Notes">
+                <a href="page_sticky_notes.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE8F0;</i></span>
+                    <span class="menu_title">Sticky Notes</span>
+                </a>
+
+            </li>
+            <li title="Forms">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE8D2;</i></span>
+                    <span class="menu_title">Forms</span>
+                </a>
+                <ul>
+                    <li><a href="forms_regular.html">Regular Elements</a></li>
+                    <li><a href="forms_advanced.html">Advanced Elements</a></li>
+                    <li><a href="forms_dynamic.html">Dynamic</a></li>
+                    <li><a href="forms_file_input.html">File Input</a></li>
+                    <li><a href="forms_file_upload.html">File Upload</a></li>
+                    <li><a href="forms_validation.html">Validation</a></li>
+                    <li><a href="forms_wizard.html">Wizard</a></li>
+                    <li class="menu_subtitle">WYSIWYG Editors</li>
+                    <li><a href="forms_wysiwyg_ckeditor.html">CKeditor</a></li>
+                    <li><a href="forms_wysiwyg_inline.html">Ckeditor Inline</a></li>
+                    <li><a href="forms_wysiwyg_tinymce.html">TinyMCE</a></li>
                 </ul>
+
             </li>
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-wrench"></i>
-                    <span class="title">Configuración</span>
-                    <!--<span  Request::is('system') ? ' class=selected ' : '' ></span>-->
-                    <span class="arrow"></span>
+            <li title="Layout">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE8F1;</i></span>
+                    <span class="menu_title">Layout</span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="/roles" class="nav-link ">
-                            <i class="icon-puzzle"></i>
-                            <span class="title">Roles</span>
-                        </a>
-                        <ul class="sub-menu">
+                <ul>
+                    <li><a href="layout_top_menu.html">Top Menu</a></li>
+                    <li class="act_item"><a href="layout_header_full.html">Full Header</a></li>
+                </ul>
 
+            </li>
+            <li title="Kendo UI Widgets">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE1BD;</i></span>
+                    <span class="menu_title">Kendo UI Widgets</span>
+                </a>
+                <ul>
+                    <li><a href="kendoui_autocomplete.html">Autocomplete</a></li>
+                    <li><a href="kendoui_calendar.html">Calendar</a></li>
+                    <li><a href="kendoui_colorpicker.html">ColorPicker</a></li>
+                    <li><a href="kendoui_combobox.html">ComboBox</a></li>
+                    <li><a href="kendoui_datepicker.html">DatePicker</a></li>
+                    <li><a href="kendoui_datetimepicker.html">DateTimePicker</a></li>
+                    <li><a href="kendoui_dropdown_list.html">DropDownList</a></li>
+                    <li><a href="kendoui_masked_input.html">Masked Input</a></li>
+                    <li><a href="kendoui_menu.html">Menu</a></li>
+                    <li><a href="kendoui_multiselect.html">MultiSelect</a></li>
+                    <li><a href="kendoui_numeric_textbox.html">Numeric TextBox</a></li>
+                    <li><a href="kendoui_panelbar.html">PanelBar</a></li>
+                    <li><a href="kendoui_timepicker.html">TimePicker</a></li>
+                    <li><a href="kendoui_toolbar.html">Toolbar</a></li>
+                    <li><a href="kendoui_window.html">Window</a></li>
+                </ul>
+
+            </li>
+            <li title="Components">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE87B;</i></span>
+                    <span class="menu_title">Components</span>
+                </a>
+                <ul>
+                    <li><a href="components_accordion.html">Accordions</a></li>
+                    <li><a href="components_autocomplete.html">Autocomplete</a></li>
+                    <li><a href="components_breadcrumbs.html">Breadcrumbs</a></li>
+                    <li><a href="components_buttons.html">Buttons</a></li>
+                    <li><a href="components_fab.html">Buttons: FAB</a></li>
+                    <li><a href="components_cards.html">Cards</a></li>
+                    <li><a href="components_colors.html">Colors</a></li>
+                    <li><a href="components_common.html">Common</a></li>
+                    <li><a href="components_dropdowns.html">Dropdowns</a></li>
+                    <li><a href="components_dynamic_grid.html">Dynamic Grid</a></li>
+                    <li><a href="components_footer.html">Footer</a></li>
+                    <li><a href="components_grid.html">Grid</a></li>
+                    <li><a href="components_icons.html">Icons</a></li>
+                    <li><a href="components_modal.html">Lightbox/Modal</a></li>
+                    <li><a href="components_list_grid_view.html">List/Grid View</a></li>
+                    <li><a href="components_lists.html">Lists</a></li>
+                    <li><a href="components_nestable.html">Nestable</a></li>
+                    <li><a href="components_notifications.html">Notifications</a></li>
+                    <li><a href="components_panels.html">Panels</a></li>
+                    <li><a href="components_preloaders.html">Preloaders</a></li>
+                    <li><a href="components_slider.html">Slider</a></li>
+                    <li><a href="components_slideshow.html">Slideshow</a></li>
+                    <li><a href="components_sortable.html">Sortable</a></li>
+                    <li><a href="components_switcher.html">Switcher</a></li>
+                    <li><a href="components_tables.html">Tables</a></li>
+                    <li><a href="components_tables_examples.html">Tables Examples</a></li>
+                    <li><a href="components_tabs.html">Tabs</a></li>
+                    <li><a href="components_tooltips.html">Tooltips</a></li>
+                    <li><a href="components_typography.html">Typography</a></li>
+                </ul>
+
+            </li>
+            <li title="E-commerce">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE8CB;</i></span>
+                    <span class="menu_title">E-commerce</span>
+                </a>
+                <ul>
+                    <li><a href="ecommerce_product_details.html">Product Details</a></li>
+                    <li><a href="ecommerce_product_edit.html">Product Edit</a></li>
+                    <li><a href="ecommerce_products_grid.html">Products Grid</a></li>
+                    <li><a href="ecommerce_products_list.html">Products List</a></li>
+                </ul>
+
+            </li>
+            <li title="Plugins">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE8C0;</i></span>
+                    <span class="menu_title">Plugins</span>
+                </a>
+                <ul>
+                    <li><a href="plugins_calendar.html">Calendar</a></li>
+                    <li><a href="plugins_charts.html">Charts</a></li>
+                    <li><a href="plugins_charts_echarts.html">Charts (echarts)</a></li>
+                    <li><a href="plugins_code_editor.html">Code Editor</a></li>
+                    <li><a href="plugins_context_menu.html">Context Menu</a></li>
+                    <li><a href="plugins_crud_table.html">CRUD Table</a></li>
+                    <li><a href="plugins_datatables.html">Datatables</a></li>
+                    <li><a href="plugins_diff.html">Diff View</a></li>
+                    <li><a href="plugins_filemanager.html">File Manager</a></li>
+                    <li><a href="plugins_gantt_chart.html">Gantt Chart</a></li>
+                    <li><a href="plugins_google_maps.html">Google Maps</a></li>
+                    <li><a href="plugins_image_cropper.html">Image Cropper</a></li>
+                    <li><a href="plugins_idle_timeout.html">Idle Timeout</a></li>
+                    <li><a href="plugins_push_notifications.html">Push Notifications</a></li>
+                    <li><a href="plugins_tour.html">Tour</a></li>
+                    <li><a href="plugins_tablesorter.html">Tablesorter</a></li>
+                    <li><a href="plugins_tree.html">Tree</a></li>
+                    <li><a href="plugins_vector_maps.html">Vector Maps</a></li>
+                </ul>
+
+            </li>
+            <li title="Pages">
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE24D;</i></span>
+                    <span class="menu_title">Pages</span>
+                </a>
+                <ul>
+                    <li><a href="page_blank.html">Blank</a></li>
+                    <li><a href="page_contact_list.html">Contact List</a></li>
+                    <li><a href="page_contact_list_horizontal.html">Contact List Horizontal</a></li>
+                    <li><a href="page_gallery.html">Gallery</a></li>
+                    <li><a href="page_help.html">Help/Faq</a></li>
+                    <li><a href="login.html">Login Page</a></li>
+                    <li><a href="page_notes.html">Notes</a></li>
+                    <li><a href="page_pricing_tables.html">Pricing Tables</a></li>
+                    <li><a href="page_search_results.html">Search Results</a></li>
+                    <li><a href="page_settings.html">Settings</a></li>
+                    <li><a href="page_todo.html">Todo</a></li>
+                    <li><a href="page_user_edit.html">User edit</a></li>
+                    <li class="menu_subtitle">Issue Tracker</li>
+                    <li><a href="page_issues_list.html">List View</a></li>
+                    <li><a href="page_issue_details.html">Issue Details</a></li>
+                    <li class="menu_subtitle">Blog</li>
+                    <li><a href="page_blog_list.html">Blog List</a></li>
+                    <li><a href="page_blog_article.html">Blog Article</a></li>
+                    <li class="menu_subtitle">Errors</li>
+                    <li><a href="error_404.html">Error 404</a></li>
+                    <li><a href="error_500.html">Error 500</a></li>
+                </ul>
+
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu_icon"><i class="material-icons">&#xE241;</i></span>
+                    <span class="menu_title">Multi level</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#">First level</a>
+                        <ul>
+                            <li>
+                                <a href="#">Second Level</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Third level</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third level</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third level</a>
+                                    </li>
+                                </ul>
                             </li>
-
-                            <li class="nav-item ">
-                                <a href="/parametros/roles" class="nav-link "> Roles </a>
+                            <li>
+                                <a href="#">Long title to test</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Third level</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third level</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third level</a>
+                                    </li>
+                                </ul>
                             </li>
-
+                            <li>
+                                <a href="#">Even longer title multi line</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item  ">
-                        <a href="/config/users" class="nav-link ">
-                            <i class="icon-eyeglasses"></i>
-                            <span class="title">Usuarios</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link ">
-                            <i class="icon-calculator"></i>
-                            <span class="title">Parametros</span>
-                        </a>
-                        <ul class="sub-menu">
-                            <!-- <li class="nav-item ">
-                                 <a href="/parametros/afiliados" class="nav-link "> Afiliados</a>
-                             </li>
-                             <li class="nav-item ">
-                                 <a href="/parametros/autorizaciones" class="nav-link "> Autorizaciones </a>
-                             </li>
-
-                             <li class="nav-item ">
-                                 <a href="/parametros/personas" class="nav-link "> Personas </a>
-                             </li>-->
-
-                            <li class="nav-item ">
-                                <a href="/parametros/abreviaturas" class="nav-link "> Abreviaturas </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/parametros/departamentos" class="nav-link "> Departamentos </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/parametros/documentos" class="nav-link "> Documentos </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/parametros/etnias" class="nav-link "> Etnias </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/parametros/municipios" class="nav-link "> Municipios </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/parametros/paises" class="nav-link "> Paises </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/parametros/zonas" class="nav-link "> Zonas </a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/config/load" class="nav-link ">
-                            <i class="icon-cloud-upload"></i>
-                            <span class="title">Cargar Archivo Plano</span>
-                        </a>
-                    </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-settings"></i>
-                    <span class="title">Sistema</span>
-                    <!--<span  Request::is('system') ? ' class=selected ' : '' ></span>-->
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="/about" class="nav-link ">
-                            <i class="icon-question"></i>
-                            <span class="title">Acerca de Identico</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="/logout" class="nav-link ">
-                            <i class="icon-power"></i>
-                            <span class="title">Cerrar Sesión</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
         </ul>
-        <!-- END SIDEBAR MENU -->
     </div>
-    <!-- END SIDEBAR -->
-</div>
+</aside><!-- main sidebar end -->

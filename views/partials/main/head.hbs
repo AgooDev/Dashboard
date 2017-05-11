@@ -1,26 +1,27 @@
 <head>
-    <meta charset="utf-8" />
-    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Preview page of Metronic Admin Theme #2 for statistics, charts, recent events and reports" name="description" />
-    <meta content="" name="author" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="{{level}}assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{level}}assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{level}}assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{level}}assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    {{{block 'pageStyles'}}}
-    <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="{{level}}assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-    <link href="{{level}}assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME GLOBAL STYLES -->
-    <!-- BEGIN THEME LAYOUT STYLES -->
-    <link href="{{level}}assets/layouts/layout2/css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="{{level}}assets/layouts/layout2/css/themes/grey.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="{{level}}assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="{{level}}favicon.ico" />
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <link rel="icon" type="image/png" href="{{level}}assets/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{level}}assets/img/favicon-32x32.png" sizes="32x32">
+    <title>{{title}}</title>
+    <!-- uikit -->
+    <link rel="stylesheet" href="{{level}}bower_components/uikit/css/uikit.almost-flat.min.css" media="all">
+    <!-- flag icons -->
+    <link rel="stylesheet" href="{{level}}assets/icons/flags/flags.min.css" media="all">
+    <!-- style switcher -->
+    <link rel="stylesheet" href="{{level}}assets/css/style_switcher.min.css" media="all">
+    <!-- altair admin -->
+    <link rel="stylesheet" href="{{level}}assets/css/main.min.css" media="all">
+
+    <!-- themes -->
+    <link rel="stylesheet" href="{{level}}assets/css/themes/themes_combined.min.css" media="all">
+    <!-- matchMedia polyfill for testing media queries in JS -->
+    <!--[if lte IE 9]>
+    <script type="text/javascript" src="{{level}}bower_components/matchMedia/matchMedia.js"></script>
+    <script type="text/javascript" src="{{level}}bower_components/matchMedia/matchMedia.addListener.js"></script>
+    <link rel="stylesheet" href="{{level}}assets/css/ie.css" media="all">
+    <![endif]-->
 </head>
